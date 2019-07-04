@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".BaseActivity"
+        tools:showIn="@layout/activity_main">
+
+    <Button
+            android:id="@+id/btnStandard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Standard Activity(Default)"/>
+
+    <Button
+            android:id="@+id/btnSingleTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SingleTop Activity"/>
+
+    <Button
+            android:id="@+id/btnSingleTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SingleTask Activity"/>
+
+    <Button
+            android:id="@+id/btnSingleInstance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SingleInstance Activity"/>
+
+    <Button
+            android:id="@+id/btnFlagNewTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FlagNewTask Activity"/>
+
+</LinearLayout>
