@@ -20,7 +20,7 @@ open class BaseActivity : AppCompatActivity() {
 
     /**
      * Note:
-     * Launch Modes' priority is higher than Intent Flag
+     * Launch modes which defined in Manifest can be overridden by Intent flags
      */
     enum class LaunchMode {
         STANDARD, SINGLETOP, SINGLETASK, SINGLEINSTANCE
@@ -48,10 +48,10 @@ open class BaseActivity : AppCompatActivity() {
         btnSingleInstance.setOnClickListener {
             startActivity(LaunchMode.SINGLEINSTANCE)
         }
-//
-//        btnFlagNewTask.setOnClickListener {
-//            startActivity(Intent.FLAG_ACTIVITY_NEW_TASK)
-//        }
+
+        btnFlagNewTask.setOnClickListener {
+            startActivity(Intent.FLAG_ACTIVITY_NEW_TASK)
+        }
 
     }
 
@@ -75,18 +75,16 @@ open class BaseActivity : AppCompatActivity() {
         startActivity(Intent(this, clazz))
     }
 
-//    private fun Context.startActivity(flag: Int) {
-//        val clazz = when (flag) {
-//            Intent.FLAG_ACTIVITY_NEW_TASK -> StandardActivity::class.java
-//            Intent.FLAG_ACTIVITY_CLEAR_TOP -> SingleTopActivity::class.java
-//            else -> null
-//        }
-//
-//        val intent = Intent(this, clazz)
-//        intent.putExtra("test", "test")
-//        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
-//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-//        startActivity(intent)
-//    }
+    private fun Context.startActivity(flag: Int) {
+        val clazz = when (flag) {
+            Intent.FLAG_ACTIVITY_NEW_TASK -> StandardActivity::class.java
+            Intent.FLAG_ACTIVITY_CLEAR_TOP -> SingleTopActivity::class.java
+            else -> null
+        }
+
+        val intent = Intent(this, clazz)
+        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+        startActivity(intent)
+    }
 
 }
