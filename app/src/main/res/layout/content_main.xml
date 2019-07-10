@@ -35,9 +35,9 @@
             android:text="SingleInstance Activity"/>
 
     <Button
-            android:id="@+id/btnFlagNewTask"
+            android:id="@+id/btnFlagClearTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="FlagNewTask Activity"/>
+            android:text="FlagClearTop Activity"/>
 
 </LinearLayout>

@@ -49,8 +49,8 @@ open class BaseActivity : AppCompatActivity() {
             startActivity(LaunchMode.SINGLEINSTANCE)
         }
 
-        btnFlagNewTask.setOnClickListener {
-            startActivity(Intent.FLAG_ACTIVITY_NEW_TASK)
+        btnFlagClearTop.setOnClickListener {
+            startActivity(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         }
 
     }
@@ -76,14 +76,15 @@ open class BaseActivity : AppCompatActivity() {
     }
 
     private fun Context.startActivity(flag: Int) {
-        val clazz = when (flag) {
-            Intent.FLAG_ACTIVITY_NEW_TASK -> StandardActivity::class.java
-            Intent.FLAG_ACTIVITY_CLEAR_TOP -> SingleTopActivity::class.java
-            else -> null
-        }
+//        val clazz = when (flag) {
+//            Intent.FLAG_ACTIVITY_NEW_TASK -> StandardActivity::class.java
+//            Intent.FLAG_ACTIVITY_CLEAR_TOP -> SingleTopActivity::class.java
+//            else -> null
+//        }
 
-        val intent = Intent(this, clazz)
-        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+        finish()
+        val intent = Intent(this, StandardActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 

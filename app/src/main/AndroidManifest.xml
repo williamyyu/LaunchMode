@@ -73,9 +73,8 @@
 
         <!--region Intent Flag-->
         <activity
-                android:name=".intent_flag.FlagActivityNewTaskActivity"
-                android:label="FlagActivityNewTask"
-                android:taskAffinity="">
+                android:name=".intent_flag.FlagClearTopActivity"
+                android:label="FlagClearTop">
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
                 <category android:name="android.intent.category.DEFAULT"/>
